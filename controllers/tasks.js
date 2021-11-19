@@ -20,4 +20,13 @@ taskRouter.post("/", async (req, res) => {
     } catch (error) {
         res.status(400).json(error);
     }
-})
+});
+
+taskRouter.delete("/:id", async (req, res) => {
+    try {
+      res.json(await Task.findByIdAndRemove(req.params.id));
+    } catch (error) {
+      //send error
+      res.status(400).json(error);
+    }
+  });

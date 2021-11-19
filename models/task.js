@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const TaskSchema = new mongoose.Schema({
-    title: {type: String, required: true
+    medicine: {type: String, required: true
 },
     details: String
 },
