@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const TaskSchema = new mongoose.Schema({
     medicine: {type: String, required: true
 },
-    details: String
+    details: String,
+    quantity: Number
 },
+
     {timestamps: true}
 );
 
