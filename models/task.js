@@ -4,7 +4,8 @@ const TaskSchema = new mongoose.Schema({
     medicine: {type: String, required: true
 },
     details: String,
-    quantity: Number
+    quantity: Number,
+    completed: Boolean
 },
 
     {timestamps: true}
