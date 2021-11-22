@@ -14,14 +14,6 @@ taskRouter.get("/", async (req, res) => {
     }
 });
 
-taskRouter.post("/", async (req, res) => {
-    try {
-        res.json(await Task.create(req.body));
-    } catch (error) {
-        res.status(400).json(error);
-    }
-});
-
 taskRouter.delete("/:id", async (req, res) => {
     try {
       res.json(await Task.findByIdAndRemove(req.params.id));
@@ -31,7 +23,15 @@ taskRouter.delete("/:id", async (req, res) => {
     }
   });
 
-  taskRouter.put("/:id", async (req, res) => {
+taskRouter.post("/", async (req, res) => {
+    try {
+        res.json(await Task.create(req.body));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
+taskRouter.put("/:id", async (req, res) => {
     try {
       res.json(
         await Task.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -40,3 +40,7 @@ taskRouter.delete("/:id", async (req, res) => {
       res.status(400).json(error);
     }
   });
+
+
+
+  
