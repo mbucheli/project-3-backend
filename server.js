@@ -29,7 +29,7 @@ const taskController = require("./controllers/tasks.js");
 app.use("/", taskController);
 
 app.get("/", (req, res) => {
-    res.send("hello world");
+    res.redirect("/");
 });
 
 // LISTENER
